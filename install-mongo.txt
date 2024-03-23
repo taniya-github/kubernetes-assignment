@@ -1,0 +1,50 @@
+sudo vi /etc/yum.repos.d/mongodb-org-4.4.repo
+
+[mongodb-org-4.4]
+name=MongoDB Repository
+baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/4.4/x86_64/
+gpgcheck=1
+enabled=1
+gpgkey=https://www.mongodb.org/static/pgp/server-4.4.asc
+
+sudo yum install -y mongodb-org
+sudo systemctl start mongod
+sudo systemctl enable mongod
+sudo systemctl status mongod
+------
+To connect:
+
+Prompt: mongo
+URL: /usr/bin/mongo mongodb://localhost:27017/
+------
+To create database:
+
+use <databasename>
+------
+To create collection with data:
+
+db.employees.insertMany([
+  {
+    name: "John Doe",
+    designation: "Software Engineer",
+    salary: 60000,
+    department: "Engineering"
+  },
+  {
+    name: "Jane Smith",
+    designation: "HR Manager",
+    salary: 70000,
+    department: "Human Resources"
+  },
+  {
+    name: "Mike Johnson",
+    designation: "Project Manager",
+    salary: 80000,
+    department: "Project Management"
+  }
+]);
+------
+To show data:
+
+db.employees.find({})
+
