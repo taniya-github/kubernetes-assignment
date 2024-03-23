@@ -8,4 +8,12 @@ To create app:
 mkdir nodejs-mongo-app
 cd nodejs-mongo-app
 npm init -y
+touch app.js
+------
+Write application code in app.js, then install modules based on your import in code:
+npm install express mongoose
+------
+To run the applcation:
+node app.js
+
 
