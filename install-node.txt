@@ -15,5 +15,7 @@ npm install express mongoose
 ------
 To run the applcation:
 node app.js
+http://localhost:3000/employees
+http://localhost:3000/employees/John Doe
 
 
